@@ -21,7 +21,7 @@ adb 已内置在 app 里，**不需要装 Android SDK、不需要装 Python、�
 
 ### 方式一：直接用（推荐）
 
-到 [Releases](../../releases) 下载 `ADBPhotoExport_mac_arm64.zip`，解压出 `手机文件导出.app`，拖进「应用程序」即可。独立 arm64 应用（M 系列芯片），内置 adb，不依赖任何环境。
+到 [Releases](../../releases) 下载 `ADBPhotoExport_v1.0.0_mac_arm64.zip`，解压出 `手机文件导出.app`，拖进「应用程序」即可。独立 arm64 应用（M 系列芯片），内置 adb，不依赖任何环境。
 
 > 首次打开如果提示「无法验证开发者」，在「系统设置 → 隐私与安全性」里点一次「仍要打开」即可。
 
