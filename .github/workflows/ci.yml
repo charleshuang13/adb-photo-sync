@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: 装依赖
+        run: |
+          python -m pip install --upgrade pip
+          pip install PySide6==6.11.2
+
+      - name: 语法检查
+        run: python -m compileall -q main.py browse_dialog.py make_icon.py screenshot.py
+
+      - name: 冒烟测试（纯逻辑 + 离屏 GUI）
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: python test_smoke.py
+
+      - name: 浏览对话框端到端（假 adb 模拟 /sdcard 树，不需要真机）
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: python test_browse_e2e.py

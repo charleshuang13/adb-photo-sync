@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# PyInstaller 构建产物
+build/
+dist/
+*.spec
+
+# 图标生成产物（icon.png 是源文件，保留）
+icon.icns
+icon.iconset/
+
+# 内置 adb：第三方二进制，不入库，build_mac.sh 会自动下载
+adb
+platform-tools/
+
+# 编辑器 / 系统
+.idea/
+.vscode/
+.DS_Store
